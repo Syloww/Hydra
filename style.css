@@ -31,6 +31,7 @@ body {
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 img {
@@ -48,6 +49,10 @@ a {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+.hero-inner {
+  padding: 2rem 0 2.5rem;
 }
 
 .site-header {
@@ -100,6 +105,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  position: relative;
 }
 
 .nav-links {
@@ -791,6 +797,10 @@ a {
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 720px) {
@@ -807,13 +817,28 @@ a {
     flex-direction: column;
   }
 
+  .section {
+    padding: 2.5rem 0 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero-inner {
+    padding: 1.75rem 0 2rem;
+  }
+
   .nav-toggle {
     display: flex;
   }
 
   .nav-links {
     position: absolute;
-    inset-inline: 0;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
     top: 100%;
     background: rgba(2, 6, 23, 0.98);
     padding: 0.6rem 1.5rem 0.9rem;
@@ -826,20 +851,42 @@ a {
     opacity: 0;
     pointer-events: none;
     transition: max-height 0.18s ease, opacity 0.18s ease;
+    box-sizing: border-box;
   }
 
   .nav-links.open {
     max-height: 320px;
     opacity: 1;
     pointer-events: auto;
+    position: fixed;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    top: 60px;
   }
 
   .nav-links a {
     padding: 0.35rem 0;
+    color: rgba(255, 255, 255, 0.92);
+    border-color: transparent;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+    border-color: rgba(253, 186, 116, 0.6);
+  }
+
+  .nav-links a.active {
+    color: #ffffff;
+    border-color: #fdba74;
   }
 }
 
 @media (max-width: 540px) {
+  .container {
+    padding: 0 1.15rem;
+  }
+
   .card {
     padding: 1.1rem 1.05rem;
   }
@@ -847,6 +894,82 @@ a {
   .mission-block,
   .legal-block {
     padding: 1.1rem 1.1rem;
+  }
+
+  .section {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.28rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-left {
+    padding: 2rem 1.15rem 1.75rem;
+  }
+
+  .hero-inner {
+    padding: 1.5rem 0 1.75rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 5vw + 1rem, 2.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-actions-row {
+    margin-top: 1.4rem;
+    gap: 1rem;
+  }
+
+  .hero-actions {
+    gap: 0.65rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1.2rem;
+    font-size: 0.88rem;
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.22rem 0.6rem;
+  }
+
+  .device-card ul {
+    grid-template-columns: 1fr;
+  }
+
+  .accordion details {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .accordion summary {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-left {
+    padding: 1.5rem 1rem 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    justify-content: center;
   }
 }
 
