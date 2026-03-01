@@ -866,8 +866,9 @@ a {
   }
 
   .nav-links a {
-    padding: 0.35rem 0;
-    color: rgba(255, 255, 255, 0.92);
+    padding: 0.5rem 0;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.95);
     border-color: transparent;
   }
 
