@@ -148,6 +148,8 @@ a {
 
 .hero {
   padding: 4.5rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-compact {
@@ -159,6 +161,12 @@ a {
   grid-template-columns: minmax(0, 3fr) minmax(0, 2.6fr);
   gap: 3rem;
   align-items: center;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  will-change: transform;
 }
 
 .badge {
@@ -260,6 +268,7 @@ a {
 
 .hero-visual {
   position: relative;
+  will-change: transform;
 }
 
 .device-card {
@@ -310,6 +319,7 @@ a {
               radial-gradient(circle at 90% 80%, rgba(59, 130, 246, 0.16), transparent 65%);
   opacity: 0.9;
   filter: blur(10px);
+  will-change: transform;
 }
 
 .section {
@@ -320,6 +330,22 @@ a {
   background: radial-gradient(circle at top, #eef2ff, #f9fafb);
   border-top: 1px solid rgba(226, 232, 240, 0.9);
   border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.section.alt .parallax-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.15), transparent 50%);
+  will-change: transform;
+}
+
+.section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section h2 {
