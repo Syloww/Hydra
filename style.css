@@ -162,7 +162,7 @@ a {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr 0.45fr;
+  grid-template-columns: 1fr 0.5fr;
   width: 100%;
   min-height: 85vh;
 }
@@ -172,6 +172,8 @@ a {
   align-items: center;
   background: var(--bg);
   padding: 2rem 3rem 2.5rem 4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-left .container {
@@ -187,8 +189,9 @@ a {
 .hero-visual-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #e0f2fe 0%, #bae6fd 28%, #7dd3fc 55%, #38bdf8 78%, #0ea5e9 100%);
-  opacity: 0.92;
+  border-radius: 42% 0 0 42%;
+  background: linear-gradient(100deg, rgba(224,242,254,0.6) 0%, #bae6fd 30%, #7dd3fc 65%, #0ea5e9 100%);
+  opacity: 0.96;
 }
 
 .hero-visual-bg .orb {
