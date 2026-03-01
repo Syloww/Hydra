@@ -806,10 +806,7 @@ a {
 @media (max-width: 720px) {
   .site-header {
     z-index: 40;
-  }
-
-  .header-inner {
-    padding: 1.25rem 0;
+    padding: 10px;
   }
 
   .hero {
