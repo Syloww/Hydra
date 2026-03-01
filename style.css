@@ -804,6 +804,14 @@ a {
 }
 
 @media (max-width: 720px) {
+  .site-header {
+    z-index: 40;
+  }
+
+  .header-inner {
+    padding: 1.25rem 0;
+  }
+
   .hero {
     padding-top: 3.8rem;
     min-height: auto;
@@ -835,34 +843,29 @@ a {
   }
 
   .nav-links {
-    position: absolute;
-    left: 50%;
-    margin-left: -50vw;
-    width: 100vw;
-    top: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     background: rgba(2, 6, 23, 0.98);
-    padding: 0.6rem 1.5rem 0.9rem;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.9);
+    padding: 5rem 1.5rem 2rem;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.35rem;
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    transition: max-height 0.18s ease, opacity 0.18s ease;
+    align-items: stretch;
+    gap: 0.5rem;
     box-sizing: border-box;
+    z-index: 30;
+    transform: translateX(100%);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+    overflow-y: auto;
+    border-left: 1px solid rgba(15, 23, 42, 0.9);
   }
 
   .nav-links.open {
-    max-height: 320px;
-    opacity: 1;
-    pointer-events: auto;
-    position: fixed;
-    left: 0;
-    margin-left: 0;
-    width: 100%;
-    top: 60px;
+    transform: translateX(0);
+    visibility: visible;
   }
 
   .nav-links a {
